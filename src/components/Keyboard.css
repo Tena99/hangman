@@ -1,0 +1,33 @@
+.alphabet-container {
+  display: grid;
+  grid-template-columns: repeat(10, 4rem);
+  gap: 6px;
+  margin-bottom: 15px;
+}
+
+.alphabet-container > button {
+  width: 100%;
+  aspect-ratio: 1;
+  border: 1px solid black;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  cursor: pointer;
+  position: relative;
+}
+
+.alphabet-container > button:hover:not(:disabled) {
+  background-color: #d5d5d5;
+  transition: 0.3s;
+}
+
+.alphabet-container .active {
+  background-color: #7cffb9;
+  color: black;
+}
+
+.alphabet-container .inactive {
+  opacity: 0.3;
+}
