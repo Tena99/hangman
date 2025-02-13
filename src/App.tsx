@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { useCallback, useEffect, useState } from "react";
 import { words } from "./assets/data/words";
 import DisplayWord from "./components/DisplayWord";
@@ -27,11 +28,9 @@ function App() {
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       const key = e.key;
-
       if (!key.match(/^[a-z]$/)) return;
 
       e.preventDefault();
-
       addGuessedLetters(key);
     };
 
@@ -42,38 +41,14 @@ function App() {
     };
   }, [guessedLetters]);
 
-  type AlphabetItem = {
-    letter: string;
-    isSelected: boolean;
-  };
-
-  const initialAlphabet: AlphabetItem[] = [];
-
-  for (let i = 65; i <= 90; i++) {
-    initialAlphabet.push({ letter: String.fromCharCode(i), isSelected: false });
-  }
-
-  // setIncorrectLetters(
   const incorrectLetters = guessedLetters.filter(
     (letter) => !randomWord.includes(letter)
   );
-  // );
-
-  console.log(incorrectLetters);
 
   return (
     <>
       <h1>Hangman</h1>
-      <div
-        style={{
-          maxWidth: "800px",
-          display: "flex",
-          flexDirection: "column",
-          gap: "2rem",
-          margin: "0 auto",
-          alignItems: "center",
-        }}
-      >
+      <div className="hangman_container">
         <HangmanDrawing
           randomWord={randomWord}
           guessedLetters={guessedLetters}
@@ -82,7 +57,6 @@ function App() {
 
         <DisplayWord randomWord={randomWord} guessedLetters={guessedLetters} />
         <Keyboard
-          alphabet={initialAlphabet}
           activeLetters={guessedLetters.filter((letter) =>
             randomWord.includes(letter)
           )}

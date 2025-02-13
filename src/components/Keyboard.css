@@ -18,11 +18,6 @@
   position: relative;
 }
 
-.alphabet-container > button:hover:not(:disabled) {
-  background-color: #d5d5d5;
-  transition: 0.3s;
-}
-
 .alphabet-container .active {
   background-color: #7cffb9;
   color: black;

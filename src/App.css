@@ -3,3 +3,12 @@ h1 {
   padding: 10px;
   margin-bottom: 40px;
 }
+
+.hangman_container {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 0 auto;
+  align-items: center;
+}

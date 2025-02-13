@@ -1,0 +1,91 @@
+.body,
+.rightArm,
+.leftArm,
+.rightLeg,
+.leftLeg {
+  background: black;
+  position: absolute;
+}
+
+.head {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border: 10px solid black;
+  top: 50px;
+  right: -30px;
+}
+
+.body {
+  width: 10px;
+  height: 100px;
+  background-color: black;
+  top: 120px;
+  right: 0;
+}
+
+.rightArm {
+  width: 100px;
+  height: 10px;
+  top: 150px;
+  right: -100px;
+  rotate: -30deg;
+  transform-origin: left bottom;
+}
+
+.leftArm {
+  width: 100px;
+  height: 10px;
+  top: 150px;
+  right: 10px;
+  rotate: 30deg;
+  transform-origin: right bottom;
+}
+
+.rightLeg {
+  width: 100px;
+  height: 10px;
+  top: 210px;
+  right: -90px;
+  rotate: 60deg;
+  transform-origin: left bottom;
+}
+
+.leftLeg {
+  width: 100px;
+  height: 10px;
+  top: 210px;
+  right: 0;
+  rotate: -60deg;
+  transform-origin: right bottom;
+}
+
+.gallows {
+  background: black;
+}
+
+.gallows:nth-child(2) {
+  height: 50px;
+  width: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.gallows:nth-child(3) {
+  height: 10px;
+  width: 200px;
+  margin-left: 120px;
+}
+
+.gallows:nth-child(4) {
+  height: 400px;
+  width: 10px;
+  margin-left: 120px;
+}
+
+.gallows:nth-child(5) {
+  height: 10px;
+  width: 250px;
+}
