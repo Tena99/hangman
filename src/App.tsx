@@ -49,11 +49,7 @@ function App() {
     <>
       <h1>Hangman</h1>
       <div className="hangman_container">
-        <HangmanDrawing
-          randomWord={randomWord}
-          guessedLetters={guessedLetters}
-          numberOfGuesses={incorrectLetters.length}
-        />
+        <HangmanDrawing numberOfGuesses={incorrectLetters.length} />
 
         <DisplayWord randomWord={randomWord} guessedLetters={guessedLetters} />
         <Keyboard
