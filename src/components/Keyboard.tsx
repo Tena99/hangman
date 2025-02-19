@@ -5,12 +5,14 @@ type KeyboardProps = {
   activeLetters: string[];
   inactiveLetters: string[];
   addGuessedLetters: (letter: string) => void;
+  isDisabled: boolean;
 };
 
 function Keyboard({
   activeLetters,
   inactiveLetters,
   addGuessedLetters,
+  isDisabled,
 }: KeyboardProps): JSX.Element {
   const alphabet: string[] = [];
 
@@ -20,15 +22,16 @@ function Keyboard({
 
   return (
     <section className="alphabet-container">
-      {alphabet.map((letter) => {
+      {alphabet.map((letter, index) => {
         const isActive = activeLetters.includes(letter.toLowerCase());
         const isInactive = inactiveLetters.includes(letter.toLowerCase());
 
         return (
           <button
+            key={index}
             className={isActive ? "active" : ""}
             onClick={() => addGuessedLetters(letter.toLowerCase())}
-            disabled={isActive || isInactive}
+            disabled={isActive || isInactive || isDisabled}
           >
             {letter}
           </button>

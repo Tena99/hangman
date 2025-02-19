@@ -12,3 +12,12 @@ h1 {
   margin: 0 auto;
   align-items: center;
 }
+
+.isWinner,
+isLoser {
+  border: 1px solid black;
+  padding: 20px 40px;
+  font-size: 24px;
+  border-radius: 10px;
+  background-color: #7cffb9;
+}
